@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
+    <application token="principal" version="1.0" profile="User" homePage="principal" state="ACTIVATED" layout="custompage_layoutBonita" theme="custompage_themeBonita">
+        <displayName>principal</displayName>
+        <applicationPages>
+            <applicationPage customPage="custompage_principal" token="principal"/>
+            <applicationPage customPage="custompage_Inventario" token="inventario"/>
+            <applicationPage customPage="custompage_Facturas" token="facturas"/>
+            <applicationPage customPage="custompage_Compras" token="compras"/>
+        </applicationPages>
+        <applicationMenus>
+            <applicationMenu applicationPage="inventario">
+                <displayName>Inventario</displayName>
+            </applicationMenu>
+            <applicationMenu applicationPage="facturas">
+                <displayName>Facturas</displayName>
+            </applicationMenu>
+            <applicationMenu applicationPage="compras">
+                <displayName>Compras</displayName>
+            </applicationMenu>
+        </applicationMenus>
+    </application>
+</applications>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.15.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.Producto">
+            <fields>
+                <field type="STRING" length="6" name="idProducto" nullable="false" collection="false"/>
+                <field type="TEXT" length="60" name="nombreProducto" nullable="false" collection="false"/>
+                <field type="STRING" length="40" name="categoria" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="unidadesDisponibles" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="disponibilidad" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="precio" nullable="false" collection="false"/>
+                <field type="FLOAT" length="255" name="descuento" nullable="false" collection="false"/>
+                <field type="STRING" length="50" name="proveedor" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findProductNCDasc" content="SELECT p &#13;&#10;FROM Producto p &#13;&#10;WHERE (p.idProducto LIKE CONCAT('%', :idProducto,'%')&#13;&#10;OR p.nombreProducto LIKE CONCAT('%', :nombreProducto, '%')&#13;&#10;OR p.categoria LIKE CONCAT('%', :categoria, '%'))&#13;&#10;AND p.disponibilidad LIKE CONCAT('%', :disponibilidad,'%')&#13;&#10;ORDER BY :order ASC&#13;&#10;&#13;&#10;" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="nombreProducto" className="java.lang.String"/>
+                        <queryParameter name="categoria" className="java.lang.String"/>
+                        <queryParameter name="order" className="java.lang.String"/>
+                        <queryParameter name="idProducto" className="java.lang.String"/>
+                        <queryParameter name="disponibilidad" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="findProductNCDdes" content="SELECT p &#13;&#10;FROM Producto p &#13;&#10;WHERE  (p.idProducto LIKE CONCAT('%', :idProducto,'%')&#13;&#10;OR p.nombreProducto LIKE CONCAT('%', :nombreProducto, '%')&#13;&#10;OR p.categoria LIKE CONCAT('%', :categoria, '%'))&#13;&#10;AND p.disponibilidad LIKE CONCAT('%', :disponibilidad,'%')&#13;&#10;ORDER BY :order DESC&#13;&#10;" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="nombreProducto" className="java.lang.String"/>
+                        <queryParameter name="categoria" className="java.lang.String"/>
+                        <queryParameter name="order" className="java.lang.String"/>
+                        <queryParameter name="idProducto" className="java.lang.String"/>
+                        <queryParameter name="disponibilidad" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.SolicitudProducto">
+            <fields>
+                <field type="STRING" length="60" name="nombreProducto" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="cantidadSolicitada" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="disponibilidad" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="confirmarRecotizar" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nuevoProducto" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="confirmarPago" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="solicitarBodega" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
