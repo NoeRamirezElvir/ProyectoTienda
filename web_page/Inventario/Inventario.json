@@ -2,7 +2,7 @@
   "modelVersion" : "2.3",
   "id" : "Inventario",
   "name" : "Inventario",
-  "lastUpdate" : 1669758388325,
+  "lastUpdate" : 1670712976763,
   "rows" : [
     [
       {
@@ -32,46 +32,6 @@
         "rows" : [
           [
             {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 12,
-                "sm" : 12,
-                "md" : 12,
-                "lg" : 12
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : "title"
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "Inventario de Productos"
-                },
-                "level" : {
-                  "type" : "constant",
-                  "value" : "Level 1"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "center"
-                }
-              },
-              "reference" : "76ac152f-97d5-4135-9afe-85908cd60459",
-              "hasValidationError" : false,
-              "id" : "pbTitle"
-            }
-          ],
-          [
-            {
               "type" : "container",
               "dimension" : {
                 "xs" : 12,
@@ -82,7 +42,7 @@
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : ""
+                  "value" : "contenedor"
                 },
                 "hidden" : {
                   "type" : "constant",
@@ -92,11 +52,115 @@
                   "type" : "variable"
                 }
               },
-              "reference" : "9b23a48e-c512-47c2-a615-fb94f386e734",
+              "reference" : "d20df512-9c28-42b9-b97f-f470c265f0c7",
               "hasValidationError" : false,
               "id" : "pbContainer",
               "rows" : [
-                [ ]
+                [
+                  {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 4,
+                      "lg" : 4
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable"
+                      }
+                    },
+                    "reference" : "aa3dfd1a-5a9f-4f54-a01e-56e3a6103a93",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [
+                      [ ]
+                    ]
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 4,
+                      "lg" : 4
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "Inventario de Productos"
+                      },
+                      "level" : {
+                        "type" : "constant",
+                        "value" : "Level 1"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "right"
+                      }
+                    },
+                    "reference" : "76ac152f-97d5-4135-9afe-85908cd60459",
+                    "hasValidationError" : false,
+                    "id" : "pbTitle"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 4,
+                      "lg" : 4
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "srcType" : {
+                        "type" : "constant",
+                        "value" : "Asset"
+                      },
+                      "url" : {
+                        "type" : "constant"
+                      },
+                      "assetName" : {
+                        "type" : "constant",
+                        "value" : "shampooicon.png"
+                      },
+                      "alt" : {
+                        "type" : "interpolation",
+                        "value" : "No se pudo cargar la imagen"
+                      }
+                    },
+                    "reference" : "86f7b8ab-65a7-4d0c-b6d4-dff834228ef2",
+                    "hasValidationError" : false,
+                    "id" : "pbImage"
+                  }
+                ]
               ]
             }
           ],
@@ -499,7 +563,7 @@
                                   },
                                   "condensed" : {
                                     "type" : "constant",
-                                    "value" : false
+                                    "value" : true
                                   },
                                   "bordered" : {
                                     "type" : "constant",
@@ -668,6 +732,28 @@
                                         "required" : {
                                           "type" : "constant",
                                           "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "minLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "maxLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "min" : {
+                                          "type" : "constant"
+                                        },
+                                        "max" : {
+                                          "type" : "constant"
+                                        },
+                                        "step" : {
+                                          "type" : "constant",
+                                          "value" : 1
                                         }
                                       },
                                       "reference" : "044ff013-352e-4b9d-a20b-ad57b06b7a4e",
@@ -732,6 +818,28 @@
                                         "required" : {
                                           "type" : "constant",
                                           "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "minLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "maxLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "min" : {
+                                          "type" : "constant"
+                                        },
+                                        "max" : {
+                                          "type" : "constant"
+                                        },
+                                        "step" : {
+                                          "type" : "constant",
+                                          "value" : 1
                                         }
                                       },
                                       "reference" : "8090b84d-22ad-4005-bcc0-1b2deb027443",
@@ -796,6 +904,28 @@
                                         "required" : {
                                           "type" : "constant",
                                           "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "minLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "maxLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "min" : {
+                                          "type" : "constant"
+                                        },
+                                        "max" : {
+                                          "type" : "constant"
+                                        },
+                                        "step" : {
+                                          "type" : "constant",
+                                          "value" : 1
                                         }
                                       },
                                       "reference" : "05488628-4da1-46a8-b182-ca4d486993e2",
@@ -894,45 +1024,73 @@
                                     {
                                       "type" : "component",
                                       "dimension" : {
-                                        "md" : 12,
-                                        "sm" : 12,
                                         "xs" : 12,
+                                        "sm" : 12,
+                                        "md" : 12,
                                         "lg" : 12
                                       },
                                       "propertyValues" : {
-                                        "labelHidden" : {
-                                          "type" : "constant",
-                                          "value" : false
-                                        },
-                                        "hidden" : {
-                                          "type" : "expression",
-                                          "value" : "!producto_selected.disponibilidad"
-                                        },
                                         "cssClasses" : {
                                           "type" : "constant",
                                           "value" : ""
+                                        },
+                                        "hidden" : {
+                                          "type" : "constant",
+                                          "value" : false
                                         },
                                         "disabled" : {
                                           "type" : "constant",
                                           "value" : true
                                         },
+                                        "required" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "labelHidden" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
                                         "label" : {
                                           "type" : "interpolation",
                                           "value" : "Disponibilidad"
                                         },
-                                        "dimension" : {
+                                        "labelPosition" : {
                                           "type" : "constant",
-                                          "value" : 12
+                                          "value" : "top"
                                         },
-                                        "value" : {
+                                        "labelWidth" : {
+                                          "type" : "constant",
+                                          "value" : 4
+                                        },
+                                        "inline" : {
+                                          "type" : "constant",
+                                          "value" : true
+                                        },
+                                        "availableValues" : {
+                                          "type" : "constant",
+                                          "value" : [
+                                            "TRUE",
+                                            "FALSE"
+                                          ]
+                                        },
+                                        "displayedKey" : {
+                                          "type" : "constant"
+                                        },
+                                        "returnedKey" : {
+                                          "type" : "constant"
+                                        },
+                                        "selectedValue" : {
                                           "type" : "variable",
                                           "value" : "producto_selected.disponibilidad"
                                         }
                                       },
-                                      "reference" : "4579c3f0-d934-459e-911f-0ca65c810c7a",
+                                      "reference" : "674ebd82-9017-4a33-8bd1-d826f12b5943",
                                       "hasValidationError" : false,
-                                      "id" : "pbCheckbox",
-                                      "description" : ""
+                                      "id" : "pbRadioButtons"
                                     }
                                   ],
                                   [
@@ -991,6 +1149,28 @@
                                         "required" : {
                                           "type" : "constant",
                                           "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "minLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "maxLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "min" : {
+                                          "type" : "constant"
+                                        },
+                                        "max" : {
+                                          "type" : "constant"
+                                        },
+                                        "step" : {
+                                          "type" : "constant",
+                                          "value" : 1
                                         }
                                       },
                                       "reference" : "e1dcd0dc-c764-4de8-9603-e25c99655158",
@@ -1055,6 +1235,28 @@
                                         "required" : {
                                           "type" : "constant",
                                           "value" : true
+                                        },
+                                        "allowHTML" : {
+                                          "type" : "constant",
+                                          "value" : false
+                                        },
+                                        "minLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "maxLength" : {
+                                          "type" : "constant",
+                                          "value" : ""
+                                        },
+                                        "min" : {
+                                          "type" : "constant"
+                                        },
+                                        "max" : {
+                                          "type" : "constant"
+                                        },
+                                        "step" : {
+                                          "type" : "constant",
+                                          "value" : 1
                                         }
                                       },
                                       "reference" : "d85bf70b-a523-48d8-aa61-fe7f7051f733",
@@ -1167,6 +1369,13 @@
   ],
   "assets" : [
     {
+      "id" : "caee7a3e-0835-4633-9610-66323239b1b8",
+      "name" : "shampooicon.png",
+      "type" : "img",
+      "order" : 1,
+      "external" : false
+    },
+    {
       "id" : "dd80f452-a74b-418d-aa38-8b8d3ca0ae3a",
       "name" : "style.css",
       "type" : "css",
@@ -1237,36 +1446,12 @@
         "       }",
         "       return information;",
         "    },",
-        "    ",
         "    productQueryParameters: function(pPage){",
         "        //var q=\"q=findByNombreProductoDes&f=nombreProducto= &p=0&c=99\"",
         "        //var q=\"q=findProductNCDasc&f=idProducto=GT56HE&f=nombreProducto= &f=categoria= &f=disponibilidad=TRUE&f=order=2&p=0&c=9\"",
         "        var queryParameters = \"\";",
         "        if($data.productListData.productsFilters.sortOrder){",
         "            var con =$data.productListData.productsFilters.sortOrder",
-        "            /*switch($data.productListData.productsFilters.sortOrder){",
-        "                case \"idProducto+ASC\":",
-        "                    queryParameters += \"q=findProductNCDasc\" + \"&f=order=1\";",
-        "                    break;",
-        "                case \"nombreProducto+ASC\":",
-        "                    queryParameters += \"q=findProductNCDasc\" + \"&f=order=2\";",
-        "                    break;",
-        "                case \"categoria+ASC\":",
-        "                    queryParameters += \"q=findProductNCDasc\" + \"&f=order=3\";",
-        "                    break;",
-        "                case \"idProducto+DESC\":",
-        "                    queryParameters += \"q=findProductNCDdes\" + \"&f=order=1\";",
-        "                    break;",
-        "                case \"nombreProducto+DESC\":",
-        "                    queryParameters += \"q=findProductNCDdes\" + \"&f=order=2\";",
-        "                    break;",
-        "                case \"categoria+DESC\":",
-        "                    queryParameters += \"q=findProductNCDdes\" + \"&f=order=3\";",
-        "                    break;",
-        "                default:",
-        "                    queryParameters += \"q=findProductNCDasc\" + \"&f=order=2\";",
-        "                    break;",
-        "            }*/",
         "            if(con===\"idProducto+ASC\"){",
         "                queryParameters += \"q=findProductNCDasc\" + \"&f=order=1\";",
         "            }else if(con===\"idProducto+DESC\"){",
@@ -1309,6 +1494,13 @@
         "if($data.productos){",
         "    $data.productListData.displayedProducts = $data.productos;",
         "}"
+      ],
+      "exposed" : false
+    },
+    "producto" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.Producto]\",\"businessObjectName\":\"Producto\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.Producto\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
       ],
       "exposed" : false
     }

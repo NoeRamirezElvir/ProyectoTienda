@@ -1,7 +1,10 @@
 /* Add margin bottom and top to each widgets */
 .component {
-    margin-bottom: 3px;
-    margin-top: 3px;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+    font-size:100%;
+    vertical-align:baseline;
 }
 
 /* Set cursor to pointer on table with selectable rows */
@@ -34,4 +37,11 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .modal-open .timepicker {
     z-index: 9999;
 }
+
+body{
+    text-align:center;
+    font-family:sans-serif;
+    background:#8F5A31;
+}
+
 
