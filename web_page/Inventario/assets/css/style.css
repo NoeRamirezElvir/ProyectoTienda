@@ -34,9 +34,15 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .modal-open .timepicker {
     z-index: 9999;
 }
-.title{
-    color:black;
-    text-align:center;
-    border-color:black;
+
+body{
+    color:#074529;
+    background:#93B5A6;
+}
+.text{
+    margin-top:50px;
+}
+.contenedor{
+    margin-top:10px;
 }
 

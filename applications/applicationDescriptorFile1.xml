@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
-    <application token="principal" version="1.0" profile="User" homePage="principal" state="ACTIVATED" layout="custompage_layoutBonita" theme="custompage_themeBonita">
-        <displayName>principal</displayName>
+    <application token="Principal" version="1.0" profile="User" homePage="principal" state="ACTIVATED" layout="custompage_layoutBonita" theme="custompage_themeBonita">
+        <displayName>Principal</displayName>
         <applicationPages>
             <applicationPage customPage="custompage_principal" token="principal"/>
+            <applicationPage customPage="custompage_Facturas" token="factura"/>
+            <applicationPage customPage="custompage_FacturasDetalles" token="detalle"/>
+            <applicationPage customPage="custompage_Clientes" token="clientes"/>
+            <applicationPage customPage="custompage_Empleados" token="empleados"/>
             <applicationPage customPage="custompage_Inventario" token="inventario"/>
-            <applicationPage customPage="custompage_Facturas" token="facturas"/>
-            <applicationPage customPage="custompage_Compras" token="compras"/>
         </applicationPages>
         <applicationMenus>
+            <applicationMenu>
+                <displayName>Ventas</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="factura">
+                        <displayName>Facturas</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="detalle">
+                        <displayName>Detalle de Facturas</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
+            <applicationMenu>
+                <displayName>Personas</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="clientes">
+                        <displayName>Clientes</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="empleados">
+                        <displayName>Empleados</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
             <applicationMenu applicationPage="inventario">
                 <displayName>Inventario</displayName>
-            </applicationMenu>
-            <applicationMenu applicationPage="facturas">
-                <displayName>Facturas</displayName>
-            </applicationMenu>
-            <applicationMenu applicationPage="compras">
-                <displayName>Compras</displayName>
             </applicationMenu>
         </applicationMenus>
     </application>

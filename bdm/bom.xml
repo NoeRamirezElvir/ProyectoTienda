@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.15.0">
     <businessObjects>
+        <businessObject qualifiedName="com.company.model.Cliente">
+            <fields>
+                <field type="STRING" length="255" name="idCliente" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="apellido" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findByNombreApellido" content="SELECT v &#13;&#10;FROM Cliente v &#13;&#10;WHERE v.nombre LIKE CONCAT('%', :nombre,'%')&#13;&#10;OR v.apellido LIKE CONCAT('%',:nombre,'%')&#13;&#10;ORDER BY v.nombre ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="nombre" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Factura">
+            <fields>
+                <field type="STRING" length="255" name="numFactura" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="fecha" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Vendedor" fetchType="LAZY" name="vendedor" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Cliente" fetchType="LAZY" name="cliente" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="dniVendedor" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idCliente" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findByNumFacturaLike" content="SELECT f &#13;&#10;FROM Factura f &#13;&#10;WHERE f.numFactura LIKE CONCAT('%', :numFactura,'%')&#13;&#10;ORDER BY f.numFactura ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="numFactura" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.FacturaDetalle">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Producto" fetchType="LAZY" name="producto" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Factura" fetchType="LAZY" name="factura" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="cantidadSolicitada" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idProducto" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="numFactura" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findByNumFacturaLike" content="SELECT f &#13;&#10;FROM FacturaDetalle f &#13;&#10;WHERE f.numFactura LIKE CONCAT('%', :numFactura,'%')&#13;&#10;ORDER BY f.numFactura ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="numFactura" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Gerente">
+            <fields>
+                <field type="STRING" length="255" name="dniGerente" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="apellido" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="correo" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.InformeDetalle">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.InformeProducto" fetchType="LAZY" name="idProducto" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="numInforme" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.InformeProducto">
+            <fields>
+                <field type="STRING" length="255" name="numInforme" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="fecha" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="tipoInforme" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Gerente" fetchType="LAZY" name="dniGerente" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Vendedor" fetchType="LAZY" name="dniVendedor" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.Producto">
             <fields>
                 <field type="STRING" length="6" name="idProducto" nullable="false" collection="false"/>
@@ -35,6 +122,18 @@
             </queries>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.SolicitudFactura">
+            <fields>
+                <field type="STRING" length="255" name="confirmarCompra" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="confirmarPago" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="confirmarEntrega" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="confirmarFactura" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="confirmarPedido" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.SolicitudProducto">
             <fields>
                 <field type="STRING" length="60" name="nombreProducto" nullable="true" collection="false"/>
@@ -47,6 +146,25 @@
             </fields>
             <uniqueConstraints/>
             <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Vendedor">
+            <fields>
+                <field type="STRING" length="255" name="dniVendedor" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="apellido" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="direccion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="horario" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findByNombreApellido" content="SELECT v &#13;&#10;FROM Vendedor v &#13;&#10;WHERE v.nombre LIKE CONCAT('%', :nombre,'%')&#13;&#10;OR v.apellido LIKE CONCAT('%',:nombre,'%')&#13;&#10;ORDER BY v.nombre ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="nombre" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
             <indexes/>
         </businessObject>
     </businessObjects>
